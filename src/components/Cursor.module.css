@@ -1,0 +1,22 @@
+.dot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: var(--red);
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s, background 0.15s;
+}
+
+.ring {
+  position: fixed;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(242, 239, 232, 0.5);
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.dot.hovered  { transform: scale(3); background: var(--wh); }
+.ring.hovered { transform: scale(0.3); opacity: 0; }

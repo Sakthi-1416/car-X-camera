@@ -1,0 +1,33 @@
+.ticker {
+  position: fixed;
+  bottom: 0;
+  left: 24px;
+  right: 24px;
+  z-index: 200;
+  background: var(--red);
+  height: 26px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.inner {
+  display: flex;
+  gap: 60px;
+  white-space: nowrap;
+  animation: scroll 60s linear infinite;
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--bk);
+}
+
+.sep {
+  color: rgba(0, 0, 0, 0.35);
+  margin: 0 18px;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}

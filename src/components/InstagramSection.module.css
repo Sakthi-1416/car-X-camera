@@ -1,0 +1,107 @@
+.section {
+  padding: 72px 0;
+  border-top: 1px solid var(--fa2);
+  overflow: hidden;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .inner { grid-template-columns: 1fr; gap: 36px; }
+}
+
+/* Left */
+.handle {
+  font-family: var(--font-display);
+  font-size: clamp(52px, 7vw, 110px);
+  line-height: 0.88;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin-top: 10px;
+}
+.at { color: var(--red); }
+
+.bio {
+  font-family: var(--font-serif);
+  font-size: 15px; font-style: italic;
+  line-height: 1.8;
+  color: rgba(242, 239, 232, 0.5);
+  margin: 24px 0;
+  max-width: 400px;
+  border-left: 2px solid var(--red);
+  padding-left: 18px;
+}
+
+.btnRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.followBtn {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  text-decoration: none; padding: 13px 26px;
+  background: transparent; border: 2px solid var(--wh);
+  color: var(--wh); cursor: none;
+  transition: border-color 0.22s ease;
+  position: relative; overflow: hidden;
+}
+.followBtn::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.28s ease;
+  z-index: -1;
+}
+.followBtn:hover { border-color: var(--red); }
+.followBtn:hover::before { transform: scaleX(1); }
+
+.dmBtn {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  text-decoration: none; padding: 13px 26px;
+  background: var(--red); color: var(--bk); cursor: none;
+  transition: background 0.2s;
+}
+.dmBtn:hover { background: #f03020; }
+
+/* Right — strips */
+.right { overflow: hidden; }
+
+.strips { display: flex; flex-direction: column; gap: 4px; }
+
+.strip {
+  display: flex;
+  gap: 4px;
+  animation: scrollLeft 20s linear infinite;
+  width: max-content;
+}
+.strip:hover { animation-play-state: paused; }
+
+.stripReverse { animation-direction: reverse; }
+
+@keyframes scrollLeft {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.thumb {
+  width: 130px; height: 130px;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+  filter: grayscale(45%);
+  transition: filter 0.28s, transform 0.28s;
+  cursor: none;
+}
+.thumb:hover { filter: grayscale(0%); transform: scale(1.05); }

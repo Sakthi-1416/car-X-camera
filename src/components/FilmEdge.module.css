@@ -1,0 +1,24 @@
+.edge {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 50;
+  pointer-events: none;
+  background: #111;
+}
+
+.left  { left: 0; }
+.right { right: 0; }
+
+.hole {
+  width: 12px;
+  height: 9px;
+  background: var(--bk);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
